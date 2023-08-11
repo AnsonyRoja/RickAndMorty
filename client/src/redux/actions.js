@@ -13,8 +13,10 @@ export const addFav = (character) => {
             if (!data.length) throw Error('No Found Character Favorite');
 
             return dispatch({
+
                 type: ADD_FAV,
                 payload: data,
+
             });
 
         } catch (error) {

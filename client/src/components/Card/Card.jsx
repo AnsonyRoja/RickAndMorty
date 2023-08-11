@@ -4,7 +4,7 @@ import { addFav, removeFav } from '../../redux/actions'
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
-function Card({ id, name, species, gender, image, onClose, addFav, removeFav, myFavorites }) {
+function Card({ id, name, species, gender, origin, status, image, onClose, addFav, removeFav, myFavorites }) {
 
    const [isFav, setIsFav] = useState(false);
 
@@ -20,7 +20,7 @@ function Card({ id, name, species, gender, image, onClose, addFav, removeFav, my
 
          setIsFav(true);
 
-         addFav({ id, name, species, gender, image })
+         addFav({ id, name, species, gender, image, origin, status })
       }
    }
 
@@ -31,6 +31,7 @@ function Card({ id, name, species, gender, image, onClose, addFav, removeFav, my
             setIsFav(true);
          }
       });
+
    }, [myFavorites]);
 
 
